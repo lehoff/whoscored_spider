@@ -1,0 +1,978 @@
+lehoff@mimer> iex -S mix                                                                  ~/git/lehoff/whoscored_spider 
+ 
+22:49:41.412 [info] Opening/checking dynamic spiders storage 
+ 
+22:49:41.423 [debug] Using the following folder to load extra spiders: ./spiders 
+ 
+22:49:41.430 [error] Could not load spiders: %MatchError{term: {:error, :enoent}} 
+ 
+22:49:42.251 [debug] Starting data storage 
+Erlang/OTP 26 [erts-14.0.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit] 
+ 
+Interactive Elixir (1.15.4) - press Ctrl+C to exit (type h() ENTER for help) 
+iex(1)> response = Crawly.fetch("https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City") 
+ 
+22:49:48.149 [error] Pipeline crash by call: Crawly.Middlewares.UserAgent.run(%Crawly.Request{url: "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City", headers: [], prev_response: nil, options: [], middlewares: [Crawly.Middlewares.UniqueRequest, Crawly.Middlewares.UserAgent], retries: 0}, %{unique_request_seen_requests: %{"https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City" => true}}) 
+** (Protocol.UndefinedError) protocol Enumerable not implemented for nil of type Atom. This protocol is implemented for the following type(s): Date.Range, File.Stream, Floki.HTMLTree, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, List, Map, MapSet, Range, Stream 
+    (elixir 1.15.4) lib/enum.ex:1: Enumerable.impl_for!/1 
+    (elixir 1.15.4) lib/enum.ex:230: Enumerable.slice/1 
+    (elixir 1.15.4) lib/enum.ex:2395: Enum.random/1 
+    (crawly 0.15.0) lib/crawly/middlewares/user_agent.ex:27: Crawly.Middlewares.UserAgent.run/3 
+    (crawly 0.15.0) lib/crawly/utils.ex:93: Crawly.Utils.pipe/3 
+    (crawly 0.15.0) lib/crawly.ex:74: Crawly.fetch/2 
+    (elixir 1.15.4) src/elixir.erl:376: anonymous fn/4 in :elixir.eval_external_handler/1 
+    (stdlib 5.0.2) erl_eval.erl:750: :erl_eval.do_apply/7 
+ 
+ 
+22:49:53.159 [debug] Request to https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City, is scheduled for retry 
+** (MatchError) no match of right hand side value: {:error, :storage_worker_not_running} 
+    (crawly 0.15.0) lib/crawly/worker.ex:198: Crawly.Worker.maybe_retry_request/2 
+    (crawly 0.15.0) lib/crawly/worker.ex:91: Crawly.Worker.get_response/1 
+    (crawly 0.15.0) lib/crawly.ex:75: Crawly.fetch/2 
+    iex:1: (file) 
+iex(1)> response = Crawly.fetch("https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City") 
+ 
+22:50:03.432 [error] Pipeline crash by call: Crawly.Middlewares.UserAgent.run(%Crawly.Request{url: "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City", headers: [], prev_response: nil, options: [], middlewares: [Crawly.Middlewares.UniqueRequest, Crawly.Middlewares.UserAgent], retries: 0}, %{unique_request_seen_requests: %{"https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City" => true}}) 
+** (Protocol.UndefinedError) protocol Enumerable not implemented for nil of type Atom. This protocol is implemented for the following type(s): Date.Range, File.Stream, Floki.HTMLTree, Function, GenEvent.Stream, HashDict, HashSet, IO.Stream, List, Map, MapSet, Range, Stream 
+    (elixir 1.15.4) lib/enum.ex:1: Enumerable.impl_for!/1 
+    (elixir 1.15.4) lib/enum.ex:230: Enumerable.slice/1 
+    (elixir 1.15.4) lib/enum.ex:2395: Enum.random/1 
+    (crawly 0.15.0) lib/crawly/middlewares/user_agent.ex:27: Crawly.Middlewares.UserAgent.run/3 
+    (crawly 0.15.0) lib/crawly/utils.ex:93: Crawly.Utils.pipe/3 
+    (crawly 0.15.0) lib/crawly.ex:74: Crawly.fetch/2 
+    (elixir 1.15.4) src/elixir.erl:376: anonymous fn/4 in :elixir.eval_external_handler/1 
+    (stdlib 5.0.2) erl_eval.erl:750: :erl_eval.do_apply/7 
+ 
+%HTTPoison.Response{ 
+  status_code: 200, 
+  body: "<!DOCTYPE html><html lang=\"en\"><head>\n\n    <link href=\"https://d2zywfiolv4f83.cloudfront.net/\" rel=\"dns-prefetch\">\n    <link href=\"https://d2zywfiolv4f83.cloudfront.net/\" rel=\"preconnect\" crossorigin=\"\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"apple-itunes-app\" content=\"app-id=940048063\">\n    <!-- #9 -->\n    <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><script src=\"https://rules.quantcount.com/rules-p-01HxE0C8MDYEG.js\" async=\"\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-16TFZ6BTNV&amp;l=dataLayer&amp;cx=c\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script src=\"https://connect.facebook.net/signals/config/233809787710341?v=2.9.116&amp;r=stable\" async=\"\"></script><script async=\"\" src=\"https://connect.facebook.net/en_US/fbevents.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://src.webpu.sh/M8ax5RMvTwn3Rz0ipg4YGMm29CknhuTy/sdk.js\"></script><script src=\"https://secure.quantserve.com/quant.js\" async=\"\" type=\"text/javascript\"></script><script async=\"\" type=\"text/javascript\" src=\"https://quantcast.mgr.consensu.org/tcfv2/cmp2-polyfilled.js?referer=www.whoscored.com\"></script><script async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-K2NSL35\"></script><script async=\"\" type=\"text/javascript\" src=\"https://cmp.quantcast.com/choice/01HxE0C8MDYEG/www.whoscored.com/choice.js?tag_version=V2\"></script><script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"47235c2cb5\",\"applicationID\":\"1020889913\",\"transactionName\":\"MVBVZhMHDEcCV0BdCwgaYkAISS9VF1dcURdJHxh+CBAHGyZaU1gFCFEaYhMDD10GRhl4AQdSQldMVFIEWhkGBFVWGHpTDwUKURBAUUZJM1teRgQCT3kCWldcARVBUkBMJQtAGg==\",\"queueTime\":0,\"applicationTime\":0,\"agent\":\"\",\"atts\":\"\"}</script><script type=\"text/javascript\">(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"47235c2cb5\",applicationID:\"1020889913\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability(\"API/\"+e+\"/called\"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t(\"handle\"),a=t(9),c=t(10),f=t(\"ee\").get(\"tracer\"),u=t(\"loader\"),s=t(4),d=NREUM;\"undefined\"==typeof window.newrelic&&(newrelic=d);var p=[\"setPageViewName\",\"setCustomAttribute\",\"setErrorHandler\",\"finished\",\"addToTrace\",\"inlineHit\",\"addRelease\"],l=\"api-\",v=l+\"ixn-\";a(p,function(t,e){d[e]=i(l,e,!0,\"api\")}),d.addPageAction=i(l,\"addPageAction\",!0),d.setCurrentRouteName=i(l,\"routeName\",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i=\"function\"==typeof e;return o(v+\"tracer\",[u.now(),t,n],r),function(){if(f.emit((i?\"\":\"no-\")+\"fn-start\",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit(\"fn-err\",[arguments,this,t],n),t}finally{f.emit(\"fn-end\",[u.now()],n)}}}};a(\"actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get\".split(\",\"),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){\"string\"==typeof t&&(t=new Error(t)),s.recordSupportability(\"API/noticeError/called\"),o(\"err\",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split(\".\"),r=0;r<n.length-1;r++)if(e=e[n[r]],\"object\"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},\"passive\",{get:function(){r=!0}});window.addEventListener(\"testPassive\",null,i),window.removeEventListener(\"" <> ..., 
+  headers: [ 
+    {"Transfer-Encoding", "chunked"}, 
+    {"Server", "TwistedWeb/19.7.0"}, 
+    {"Date", "Mon, 24 Jul 2023 20:50:03 GMT"}, 
+    {"Content-Type", "text/html; charset=utf-8"} 
+  ], 
+  request_url: "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City", 
+  request: %HTTPoison.Request{ 
+    method: :get, 
+    url: "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City", 
+    headers: [], 
+    body: "", 
+    params: %{}, 
+    options: [] 
+  } 
+} 
+iex(2)> {:ok, doc} = Floki.parse_document(response.body) 
+{:ok, 
+ [ 
+   {"html", [{"lang", "en"}], 
+    [ 
+      {"head", [], 
+       [ 
+         {"link", 
+          [ 
+            {"href", "https://d2zywfiolv4f83.cloudfront.net/"}, 
+            {"rel", "dns-prefetch"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"href", "https://d2zywfiolv4f83.cloudfront.net/"}, 
+            {"rel", "preconnect"}, 
+            {"crossorigin", ""} 
+          ], []}, 
+         {"meta", 
+          [ 
+            {"name", "viewport"}, 
+            {"content", "width=device-width, initial-scale=1"} 
+          ], []}, 
+         {"meta", 
+          [{"name", "apple-itunes-app"}, {"content", "app-id=940048063"}], []}, 
+         {:comment, " #9 "}, 
+         {"meta", 
+          [ 
+            {"http-equiv", "content-type"}, 
+            {"content", "text/html; charset=utf-8"} 
+          ], []}, 
+         {"meta", [{"http-equiv", "X-UA-Compatible"}, {"content", "IE=Edge"}], 
+          []}, 
+         {"script", 
+          [ 
+            {"src", "https://rules.quantcount.com/rules-p-01HxE0C8MDYEG.js"}, 
+            {"async", ""} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"type", "text/javascript"}, 
+            {"async", ""}, 
+            {"src", 
+             "https://www.googletagmanager.com/gtag/js?id=G-16TFZ6BTNV&l=dataLayer&cx=c"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"type", "text/javascript"}, 
+            {"async", ""}, 
+            {"src", "https://www.google-analytics.com/analytics.js"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"src", 
+             "https://connect.facebook.net/signals/config/233809787710341?v=2.9.116&r=stable"}, 
+            {"async", ""} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"async", ""}, 
+            {"src", "https://connect.facebook.net/en_US/fbevents.js"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"type", "text/javascript"}, 
+            {"async", ""}, 
+            {"src", 
+             "https://src.webpu.sh/M8ax5RMvTwn3Rz0ipg4YGMm29CknhuTy/sdk.js"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"src", "https://secure.quantserve.com/quant.js"}, 
+            {"async", ""}, 
+            {"type", "text/javascript"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"async", ""}, 
+            {"type", "text/javascript"}, 
+            {"src", 
+             "https://quantcast.mgr.consensu.org/tcfv2/cmp2-polyfilled.js?referer=www.whoscored.com"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"async", ""}, 
+            {"src", "https://www.googletagmanager.com/gtm.js?id=GTM-K2NSL35"} 
+          ], [""]}, 
+         {"script", 
+          [ 
+            {"async", ""}, 
+            {"type", "text/javascript"}, 
+            {"src", 
+             "https://cmp.quantcast.com/choice/01HxE0C8MDYEG/www.whoscored.com/choice.js?tag_version=V2"} 
+          ], [""]}, 
+         {"script", [{"type", "text/javascript"}], 
+          ["window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"47235c2cb5\",\"applicationID\":\"1020889913\",\"transactionName\":\"MVBVZhMHDEcCV0BdCwgaYkAISS9VF1dcURdJHxh+CBAHGyZaU1gFCFEaYhMDD10GRhl4AQdSQldMVFIEWhkGBFVWGHpTDwUKURBAUUZJM1teRgQCT3kCWldcARVBUkBMJQtAGg==\",\"queueTime\":0,\"applicationTime\":0,\"agent\":\"\",\"atts\":\"\"}"]}, 
+         {"script", [{"type", "text/javascript"}], 
+          ["(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"47235c2cb5\",applicationID:\"1020889913\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability(\"API/\"+e+\"/called\"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t(\"handle\"),a=t(9),c=t(10),f=t(\"ee\").get(\"tracer\"),u=t(\"loader\"),s=t(4),d=NREUM;\"undefined\"==typeof window.newrelic&&(newrelic=d);var p=[\"setPageViewName\",\"setCustomAttribute\",\"setErrorHandler\",\"finished\",\"addToTrace\",\"inlineHit\",\"addRelease\"],l=\"api-\",v=l+\"ixn-\";a(p,function(t,e){d[e]=i(l,e,!0,\"api\")}),d.addPageAction=i(l,\"addPageAction\",!0),d.setCurrentRouteName=i(l,\"routeName\",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i=\"function\"==typeof e;return o(v+\"tracer\",[u.now(),t,n],r),function(){if(f.emit((i?\"\":\"no-\")+\"fn-start\",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit(\"fn-err\",[arguments,this,t],n),t}finally{f.emit(\"fn-end\",[u.now()],n)}}}};a(\"actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get\".split(\",\"),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){\"string\"==typeof t&&(t=new Error(t)),s.recordSupportability(\"API/noticeError/called\"),o(\"err\",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split(\".\"),r=0;r<n.length-1;r++)if(e=e[n[r]],\"object\"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},\"passive\",{get:function(){r=!0}});window.addEventListener(\"testPassive\",null,i),window.removeEventListener(\"testPassive\",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o(\"storeMetric\",n,null,\"api\"),n}function i(t,e){var n=[c,t,{name:t},e];return o(\"storeEventMetrics\",n,null,\"api\"),n}var o=t(\"handle\"),a=\"sm\",c=\"cm\";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){\"first-paint\"===t.name?l(\"timing\",[\"fp\",Math.floor(t.startTime)]):\"first-contentful-paint\"===t.name&&l(\"timing\",[\"fcp\",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l(\"lcp\",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l(\"cls\",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t[\"net-type\"]=e.type),e.effectiveType&&(t[\"net-etype\"]=e.effectiveType),e.rtt&&(t[\"net-rtt\"]=e.rtt),e.downlink&&(t[\"net-dlink\"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l(\"timing\",[\"fi\",e,n])}}function f(t){\"hidden\"===t&&(u=v.now(),l(\"pageHide\",[u]))}if(!(\"init\"in NREUM&&\"page_view_timing\"in NREUM.init&&\"enabled\"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t(\"handle\"),v=t(\"loader\"),m=t(8),g=t(3),y=NREUM.o.EV;if(\"PerformanceObserver\"in window&&\"function\"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:[\"paint\"]})}catch(h){}d=new " <> ...]}, 
+         {"script", [{"type", "text/javascript"}], 
+          ["window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"47235c2cb5\",\"applicationID\":\"1020889913\",\"transactionName\":\"MVBVZhMHDEcCV0BdCwgadmExSRRdBkNHGwkHQVRaBBVNWQJAV1wHA1tDQARIA0cTTA==\",\"queueTime\":0,\"applicationTime\":461,\"agent\":\"\",\"atts\":\"\"}"]}, 
+         {"script", [{"type", "text/javascript"}], 
+          ["(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"47235c2cb5\",applicationID:\"1020889913\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability(\"API/\"+e+\"/called\"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t(\"handle\"),a=t(9),c=t(10),f=t(\"ee\").get(\"tracer\"),u=t(\"loader\"),s=t(4),d=NREUM;\"undefined\"==typeof window.newrelic&&(newrelic=d);var p=[\"setPageViewName\",\"setCustomAttribute\",\"setErrorHandler\",\"finished\",\"addToTrace\",\"inlineHit\",\"addRelease\"],l=\"api-\",v=l+\"ixn-\";a(p,function(t,e){d[e]=i(l,e,!0,\"api\")}),d.addPageAction=i(l,\"addPageAction\",!0),d.setCurrentRouteName=i(l,\"routeName\",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i=\"function\"==typeof e;return o(v+\"tracer\",[u.now(),t,n],r),function(){if(f.emit((i?\"\":\"no-\")+\"fn-start\",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit(\"fn-err\",[arguments,this,t],n),t}finally{f.emit(\"fn-end\",[u.now()],n)}}}};a(\"actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get\".split(\",\"),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){\"string\"==typeof t&&(t=new Error(t)),s.recordSupportability(\"API/noticeError/called\"),o(\"err\",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split(\".\"),r=0;r<n.length-1;r++)if(e=e[n[r]],\"object\"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},\"passive\",{get:function(){r=!0}});window.addEventListener(\"testPassive\",null,i),window.removeEventListener(\"testPassive\",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o(\"storeMetric\",n,null,\"api\"),n}function i(t,e){var n=[c,t,{name:t},e];return o(\"storeEventMetrics\",n,null,\"api\"),n}var o=t(\"handle\"),a=\"sm\",c=\"cm\";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){\"first-paint\"===t.name?l(\"timing\",[\"fp\",Math.floor(t.startTime)]):\"first-contentful-paint\"===t.name&&l(\"timing\",[\"fcp\",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l(\"lcp\",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l(\"cls\",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t[\"net-type\"]=e.type),e.effectiveType&&(t[\"net-etype\"]=e.effectiveType),e.rtt&&(t[\"net-rtt\"]=e.rtt),e.downlink&&(t[\"net-dlink\"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l(\"timing\",[\"fi\",e,n])}}function f(t){\"hidden\"===t&&(u=v.now(),l(\"pageHide\",[u]))}if(!(\"init\"in NREUM&&\"page_view_timing\"in NREUM.init&&\"enabled\"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t(\"handle\"),v=t(\"loader\"),m=t(8),g=t(3),y=NREUM.o.EV;if(\"PerformanceObserver\"in window&&\"function\"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:[\"paint\"]})}catch(h){}d=new " <> ...]}, 
+         {"meta", 
+          [ 
+            {"name", "p:domain_verify"}, 
+            {"content", "353f79d2d02f885b1a54bBffe7ab9758f"} 
+          ], []}, 
+         {"meta", 
+          [ 
+            {"name", "title"}, 
+            {"content", 
+             "Manchester United 4-3 Manchester City - Premier League 2009/2010 Live"} 
+          ], []}, 
+         {"meta", 
+          [ 
+            {"name", "description"}, 
+            {"content", 
+             "Manchester United-Manchester City live incidents, goals, cards, substitutions, lineups, statistics, formations"} 
+          ], []}, 
+         {"meta", 
+          [ 
+            {"name", "keywords"}, 
+            {"content", 
+             "Manchester United-Manchester City live incidents, goals, cards, substitutions, lineups, statistics, formations"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "canonical"}, 
+            {"href", 
+             "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+          ], []}, 
+         {"title", [], 
+          ["\n        \n    \n    Manchester United 4-3 Manchester City - Premier League 2009/2010 Live\n\n\n    "]}, 
+         {"link", 
+          [ 
+            {"rel", "icon"}, 
+            {"type", "image/gif"}, 
+            {"href", "https://d2zywfiolv4f83.cloudfront.net/img/favicon.gif"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "alternate"}, 
+            {"type", "application/rss+xml"}, 
+            {"title", "The latest previews and articles from WhoScored.com"}, 
+            {"href", "/Rss"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "alternate"}, 
+            {"hreflang", "en"}, 
+            {"href", 
+             "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "alternate"}, 
+            {"hreflang", "es"}, 
+            {"href", 
+             "https://es.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "alternate"}, 
+            {"hreflang", "tr"}, 
+            {"href", 
+             "https://tr.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+          ], []}, 
+         {"link", 
+          [ 
+            {"rel", "alternate"}, 
+            {"hreflang", "it"}, 
+            {"href", 
+             "https://it.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+          ], []}, 
+         {"link", [{"rel", "alternate"}, {"hreflang", "fr"}, {"href", ...}], []}, 
+         {"link", [{"rel", "alternate"}, {"hreflang", ...}, {...}], []}, 
+         {"link", [{"rel", ...}, {...}, ...], []}, 
+         {"link", [{...}, ...], []}, 
+         {"link", [...], ...}, 
+         {"link", ...}, 
+         {...}, 
+         ... 
+       ]}, 
+      {"body", [{"data-locale-code", "en"}], 
+       [ 
+         {"link", 
+          [ 
+            {"rel", "stylesheet"}, 
+            {"type", "text/css"}, 
+            {"href", 
+             "https://d2zywfiolv4f83.cloudfront.net/css/ws-css.css?v=1687508818"}, 
+            {"media", "all"}, 
+            {"onload", "this.media = 'all'"} 
+          ], []}, 
+         {"script", [], 
+          ["\n    require.config.params.site.gRdCountries = [\"BR\", \"IN\", \"KZ\", \"RU\", \"KR\", \"VN\", \"NG\", \"GH\", \"UG\", \"KE\", \"TN\", \"EG\", \"MA\"];\n"]}, 
+         {:comment, " Google Tag Manager (noscript) "}, 
+         {"noscript", [], 
+          ["\n        <iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-K2NSL35\"\n            height=\"0\" width=\"0\" style=\"display: none; visibility: hidden\"></iframe>\n    "]}, 
+         {:comment, " End Google Tag Manager (noscript) "}, 
+         {"style", [], 
+          ["\n    #resp-user-bar {\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        margin-bottom: 5px;\n    }\n\n    #header-wrapper {\n        width: 100%;\n        background-color: #262626;\n        padding-top: 15px;\n    }\n\n    #clock {\n        font-size: 11px;\n        zoom: 1;\n        color: #FFF;\n        padding-left: 3px;\n        padding-right: 30px;\n        float: left;\n        line-height: 2em;\n    }\n\n    #tz {\n        cursor: pointer;\n        background: none;\n        display: inline-block;\n        border: none;\n        line-height: 2em;\n        vertical-align: middle;\n    }\n\n    #localization {\n        border: none;\n        background: none;\n    }\n\n    .nav-btn {\n        line-height: 60px;\n        padding: 0 0.6vw;\n        white-space: nowrap;\n        z-index: 2;\n    }\n\n    #tournament-groups.tabs li {\n        overflow: hidden;\n    }\n\n    .dropdown {\n        position: relative;\n        display: inline-block;\n    }\n\n    .dropdown-content {\n        display: none;\n        position: absolute;\n        background-color: #f9f9f9;\n        min-width: 100px;\n        padding: 12px 16px;\n        z-index: 999;\n    }\n\n    .dropdown:hover .dropdown-content {\n        display: block;\n    }\n\n    #dropdown-icon {\n        vertical-align: middle;\n        height: 20px;\n        width: 24px;\n        background-image: url(\"data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg version='1.1' viewBox='0 0 26 17' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd' stroke-linecap='square'%3e%3cg transform='translate(-324 -55)' stroke='%23fff' stroke-width='2'%3e%3cg transform='translate(325 56)'%3e%3cline id='Line' x1='.5' x2='23.5' y1='7.5' y2='7.5'/%3e%3cline id='a' x1='.5' x2='23.5' y1='14.5' y2='14.5'/%3e%3cline x1='.5' x2='23.5' y1='.5' y2='.5'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e\");\n        display: inline-block;\n        background-size: cover;\n    }\n\n    .nav-btn a {\n        color: white;\n        font-size: 14px;\n    }\n\n        .nav-btn a:hover {\n            text-decoration: underline;\n        }\n\n    #dropdown-nav {\n        position: relative;\n    }\n\n    #dropdown-nav-menu {\n        position: absolute;\n        right: 0;\n        background-color: #262626;\n        width: 300px;\n        z-index: 1;\n        display: none;\n    }\n\n    @media screen and (max-width: 720px) {\n        #tournament-nav-popup .region-column, #favorite-tournaments-list li, #popular-tournaments-list li {\n            width: 50%;\n        }\n\n        #billboard1 {\n            min-height: 50px;\n        }\n    }\n\n\n    @media screen and (min-width: 720px) and (max-width: 983px) {\n        #tournament-nav-popup .region-column, #favorite-tournaments-list li, #popular-tournaments-list li {\n            width: 25%;\n        }\n    }\n\n\n    #tournament-nav-popup .nav-region .t {\n        /*display: inline-block;*/\n        display: block;\n        padding-left: 5px;\n    }\n\n    #search-area {\n        position: unset;\n        margin-top: 0px;\n        width: 100%;\n        max-width: 170px;\n        height: 100%;\n        display: flex;\n        float: right;\n    }\n\n    #search-button {\n        float: left;\n        border: 3px solid #fff;\n        width: 16px;\n        height: 20px;\n        padding: 1px;\n        line-height: 16px;\n        text-align: center;\n        background-color: #fff;\n        cursor: pointer;\n    }\n\n    #search-box {\n        width: calc(100% - 18px);\n        text-overflow: ellipsis;\n        height: 20px;\n    }\n\n    #search-form {\n        display: flex;\n        align-items: center;\n        width: 100%;\n    }\n\n    #accountInfoFrame {\n        height: 24px;\n        position: absolute;\n        top: 0;\n        right: 0;\n        width:100%;\n    }\n\n    #tournament-nav-popup .option-group {\n        position: relative;\n        background-color: #262626;\n    }\n\n    #tournament-nav-popup .tabs a {\n        padding: 0.5em 1.8em 0.5em 0.5em;\n        font-size: 1em;\n        text-decoration: none;\n        color: #DEDEDE;\n        background-image: none !important;\n        box-shadow: none !important;\n        filter: none " <> ...]}, 
+         {"div", [{"id", "header-wrapper"}], 
+          [ 
+            {"div", [{"style", "display: block;"}, {"class", "max-content"}], 
+             [ 
+               {"div", [{"id", "resp-user-bar"}], 
+                [ 
+                  {"div", 
+                   [ 
+                     {"id", "clock"}, 
+                     {"class", 
+                      "col16-lg-1 col16-m-2 col16-s-2 col16-xs-2 clock"} 
+                   ], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"href", "/Accounts/#timeZoneId"}, 
+                        {"id", "tz"}, 
+                        {"class", 
+                         "iconize iconize-icon-right ui-state-transparent-default ui-state-active rc"} 
+                      ], 
+                      [ 
+                        {"span", [{"id", "time"}, {"class", "rc-t"}], []}, 
+                        {"span", [{"class", "ui-icon ui-icon-circle-arrow-e"}], 
+                         []} 
+                      ]} 
+                   ]}, 
+                  {"div", 
+                   [{"class", "col16-lg-2 col16-m-2 col16-s-5 col16-xs-3"}], 
+                   [ 
+                     {"select", 
+                      [ 
+                        {"id", "locale-select"}, 
+                        {"onchange", "location = this.value;"} 
+                      ], 
+                      [ 
+                        {"option", 
+                         [ 
+                           {"selected", ""}, 
+                           {"value", 
+                            "https://www.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        EN\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://es.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        ES\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://tr.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        TR\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://it.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        IT\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://fr.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        FR\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://sport360.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        AR\n                    "]}, 
+                        {"option", 
+                         [ 
+                           {"value", 
+                            "https://ru.whoscored.com/Matches/317835/Live/England-Premier-League-2009-2010-Manchester-United-Manchester-City"} 
+                         ], 
+                         ["\n                        RU\n                    "]} 
+                      ]} 
+                   ]}, 
+                  {"div", 
+                   [{"class", "col16-lg-11 col16-m-9 col16-s-5 col16-xs-6"}], 
+                   [ 
+                     {"div", [{"id", "search-area"}], 
+                      [ 
+                        {"form", 
+                         [ 
+                           {"id", "search-form"}, 
+                           {"method", "get"}, 
+                           {"action", "/Search/"} 
+                         ], 
+                         [ 
+                           {"input", 
+                            [ 
+                              {"id", "search-box"}, 
+                              {"type", "text"}, 
+                              {"class", ...}, 
+                              {...}, 
+                              ... 
+                            ], []}, 
+                           {"div", 
+                            [{"id", "search-button"}, {"class", ...}, {...}], 
+                            [{"span", ...}]} 
+                         ]} 
+                      ]} 
+                   ]}, 
+                  {"div", 
+                   [ 
+                     {"class", "col16-lg-2 col16-m-3 col16-s-4 col16-xs-5"}, 
+                     {"style", "position: relative; display: block;"} 
+                   ], 
+                   [ 
+                     {"div", 
+                      [ 
+                        {"id", "accountInfoContainer"}, 
+                        {"style", "width: 100%;"} 
+                      ], 
+                      [ 
+                        {"iframe", 
+                         [ 
+                           {"id", "accountInfoFrame"}, 
+                           {"scrolling", "no"}, 
+                           {"frameborder", "0"}, 
+                           {"src", "/Accounts/Info"}, 
+                           {"allowtransparency", "true"} 
+                         ], []} 
+                      ]}, 
+                     {"div", [{"id", "accountControlsDropdown"}], 
+                      [{"ul", [], [{"li", [], [{...}]}, {"li", [], [...]}]}]}, 
+                     {"div", 
+                      [{"data-identity", "Users.Security.GuestIdentity"}], []} 
+                   ]} 
+                ]}, 
+               {"div", [{"id", "main-nav"}], 
+                [ 
+                  {"div", 
+                   [{"class", "nav-btn"}, {"style", "padding-left: 5px;"}], 
+                   [ 
+                     {"a", [{"href", "/"}], 
+                      [ 
+                        {"img", 
+                         [ 
+                           {"class", "ws-logo s-off xs-off"}, 
+                           {"src", 
+                            "https://d2zywfiolv4f83.cloudfront.net/img/ws_logo.svg"}, 
+                           {"alt", "whoscored logo"}, 
+                           {"height", "36"}, 
+                           {"width", "140"} 
+                         ], []}, 
+                        {"img", 
+                         [ 
+                           {"class", "ws-logo-s m-off lg-off"}, 
+                           {"src", 
+                            "https://d2zywfiolv4f83.cloudfront.net/img/ws_logo_small.svg"}, 
+                           {"alt", "whoscored mobile logo"}, 
+                           {"height", "50"}, 
+                           {"width", "50"} 
+                         ], []} 
+                      ]} 
+                   ]}, 
+                  {"div", [{"class", "nav-btn"}], 
+                   [ 
+                     {"a", 
+                      [{"id", "livescores-menuitem"}, {"href", "/LiveScores"}], 
+                      ["Live Scores"]} 
+                   ]}, 
+                  {"div", [{"class", "nav-btn"}], 
+                   [ 
+                     {"a", 
+                      [{"id", "statistics-menuitem"}, {"href", "/Statistics"}], 
+                      ["Statistics"]} 
+                   ]}, 
+                  {"div", [{"class", "nav-btn"}], 
+                   [ 
+                     {"a", [{"id", "previews-menuitem"}, {"href", "/Previews"}], 
+                      ["Previews"]} 
+                   ]}, 
+                  {"div", [{"class", "xs-off nav-btn"}], 
+                   [ 
+                     {"a", 
+                      [{"id", "editorial-menuitem"}, {"href", "/Editorial"}], 
+                      ["News"]} 
+                   ]}, 
+                  {"div", [{"class", "s-off xs-off nav-btn"}], 
+                   [ 
+                     {"a", 
+                      [{"id", "facts-menuitem"}, {"href", "/Betting/Facts"}], 
+                      ["Top Facts"]} 
+                   ]}, 
+                  {"div", 
+                   [ 
+                     {"class", "s-off xs-off nav-btn"}, 
+                     {"id", "gameslnkdt"}, 
+                     {"style", 
+                      "position: relative; padding-right: 25px; display: none;"} 
+                   ], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"id", "games-menuitem"}, 
+                        {"href", 
+                         "https://games.whoscored.com/?utm_source=whoscored%20Website&utm_medium=HPTab%20Home&utm_campaign=2223"} 
+                      ], 
+                      [ 
+                        "Games\n                ", 
+                        {"img", [{"alt", ...}, {...}, ...], []} 
+                      ]} 
+                   ]}, 
+                  {"div", [{"class", "s-off xs-off nav-btn"}], 
+                   [ 
+                     {"a", 
+                      [{"id", "freebets-menuitem"}, {"href", "/free-bets"}], 
+                      ["Free Bets"]} 
+                   ]}, 
+                  {"div", 
+                   [{"id", "dropdown-nav"}, {"class", "lg-off m-off nav-btn"}], 
+                   [ 
+                     {"span", [{"id", "dropdown-icon"}], []}, 
+                     {"div", [{"id", "dropdown-nav-menu"}], 
+                      [{"div", [...], ...}, {"div", ...}, {...}, ...]} 
+                   ]} 
+                ]}, 
+               {"div", [{"id", "tournament-nav-popup"}, {"class", "rc-b"}], 
+                [ 
+                  {"div", [{"class", "option-group"}], 
+                   [ 
+                     {"ul", [{"id", "tournament-groups"}, {"class", "tabs"}], 
+                      [ 
+                        {"li", 
+                         [ 
+                           {"class", 
+                            "col12-lg-3 col12-m-4 col12-s-4 col12-xs-6"} 
+                         ], 
+                         [ 
+                           {"a", 
+                            [ 
+                              {"href", "#popular"}, 
+                              {"class", 
+                               "iconize iconize-icon-right ui-state-transparent-default"} 
+                            ], [{"span", [...], ...}, {"span", ...}]} 
+                         ]}, 
+                        {"li", 
+                         [ 
+                           {"class", 
+                            "col12-lg-3 col12-m-4 col12-s-4 col12-xs-4"} 
+                         ], 
+                         [ 
+                           {"a", [{"href", "#favourites"}, {"class", ...}], 
+                            [{"span", ...}, {...}]} 
+                         ]}, 
+                        {"li", 
+                         [ 
+                           {"class", 
+                            "col12-lg-3 col12-m-4 col12-s-4 col12-xs-2"} 
+                         ], [{"a", [{"href", ...}, {...}], [{...}, ...]}]} 
+                      ]} 
+                   ]}, 
+                  {"div", 
+                   [ 
+                     {"id", "favourites"}, 
+                     {"class", "nav-region"}, 
+                     {"style", "display: none;"} 
+                   ], 
+                   [ 
+                     {"div", [{"id", "my-favorites-note"}], 
+                      ["Add your favourite leagues and cups here to access them quickly and see them on top in live scores."]}, 
+                     {"ul", [{"id", "favorite-tournaments-list"}], []} 
+                   ]}, 
+                  {"div", 
+                   [ 
+                     {"id", "popular"}, 
+                     {"class", "nav-region"}, 
+                     {"style", "display: none;"} 
+                   ], 
+                   [ 
+                     {"ul", [{"id", "popular-tournaments-list"}], 
+                      [ 
+                        {"li", [{"class", "hover-target"}], 
+                         [ 
+                           {"a", [{"class", ...}, {...}, ...], 
+                            ["FIFA Women's World Cup", ...]}, 
+                           {"div", [{...}], []} 
+                         ]}, 
+                        {"li", [{"class", "hover-target"}], 
+                         [{"a", [{...}, ...], [...]}, {"div", [...], ...}]}, 
+                        {"li", [{"class", "hover-target"}], 
+                         [{"a", [...], ...}, {"div", ...}]}, 
+                        {"li", [{"class", "hover-target"}], [{"a", ...}, {...}]}, 
+                        {"li", [{"class", ...}], [{...}, ...]}, 
+                        {"li", [{...}], [...]}, 
+                        {"li", [...], ...}, 
+                        {"li", ...}, 
+                        {...}, 
+                        ... 
+                      ]} 
+                   ]}, 
+                  {"div", 
+                   [ 
+                     {"id", "domestic"}, 
+                     {"class", "nav-region"}, 
+                     {"style", "display: none;"} 
+                   ], 
+                   [ 
+                     {"div", [{"id", "domestic-index"}], []}, 
+                     {"div", [{"id", "domestic-regions"}], []} 
+                   ]} 
+                ]}, 
+               {"script", [{"type", "text/javascript"}], 
+                ["\nvar allRegions = [{type:1, id:248, flg:'flg-caf', name: 'Africa', tournaments: [{id:290, url:'/Regions/248/Tournaments/290/Африка-CAF-Champions-League', name:'CAF Champions League'},{id:574, url:'/Regions/248/Tournaments/574/Африка-CAF-Confederations-Cup', name:'CAF Confederations Cup'},{id:573, url:'/Regions/248/Tournaments/573/Африка-CAF-Super-Cup', name:'CAF Super Cup'},{id:505, url:'/Regions/248/Tournaments/505/Африка-CECAFA-Senior-Challenge-Cup', name:'CECAFA Senior Challenge Cup'}]},\n{type:0, id:3, flg:'flg-al', name: 'Albania', tournaments: [{id:406, url:'/Regions/3/Tournaments/406/Albania-Kategoria-e-Parë', name:'Kategoria e Parë'},{id:182, url:'/Regions/3/Tournaments/182/Albania-Kategoria-Superiore', name:'Kategoria Superiore'},{id:451, url:'/Regions/3/Tournaments/451/Albania-Kategoria-Superiore-qualification', name:'Kategoria Superiore qualification'},{id:618, url:'/Regions/3/Tournaments/618/Albania-Kupa-e-Shqipërisë', name:'Kupa e Shqipërisë'}]},\n{type:0, id:4, flg:'flg-dz', name: 'Algeria', tournaments: [{id:281, url:'/Regions/4/Tournaments/281/Algeria-Ligue-Professionnelle-1', name:'Ligue Professionnelle 1'},{id:518, url:'/Regions/4/Tournaments/518/Algeria-Ligue-2', name:'Ligue 2'}]},\n{type:0, id:6, flg:'flg-ad', name: 'Andorra', tournaments: [{id:619, url:'/Regions/6/Tournaments/619/Andorra-Andorran-Cup', name:'Andorran Cup'},{id:142, url:'/Regions/6/Tournaments/142/Andorra-Primera-Divisio', name:'Primera Divisio'},{id:526, url:'/Regions/6/Tournaments/526/Andorra-Primera-Divisio-Qualification', name:'Primera Divisio Qualification'},{id:397, url:'/Regions/6/Tournaments/397/Andorra-Segona-Divisio', name:'Segona Divisio'}]},\n{type:0, id:7, flg:'flg-ao', name: 'Angola', tournaments: [{id:245, url:'/Regions/7/Tournaments/245/Angola-1-Division', name:'1. Division'}]},\n{type:0, id:10, flg:'flg-ag', name: 'Antigua and Barbuda', tournaments: [{id:378, url:'/Regions/10/Tournaments/378/Antigua-and-Barbuda-Premier-Division', name:'Premier Division'}]},\n{type:0, id:11, flg:'flg-ar', name: 'Argentina', tournaments: [{id:68, url:'/Regions/11/Tournaments/68/Argentina-Liga-Profesional', name:'Liga Profesional'},{id:317, url:'/Regions/11/Tournaments/317/Argentina-Primera-B-Nacional', name:'Primera B Nacional'},{id:489, url:'/Regions/11/Tournaments/489/Argentina-Super-Cup', name:'Super Cup'},{id:697, url:'/Regions/11/Tournaments/697/Argentina-Copa-de-la-Superliga', name:'Copa de la Superliga'},{id:504, url:'/Regions/11/Tournaments/504/Argentina-Cup', name:'Cup'},{id:541, url:'/Regions/11/Tournaments/541/Argentina-Super-Cup', name:'Super Cup'},{id:605, url:'/Regions/11/Tournaments/605/Argentina-Argentina-4', name:'Argentina 4'},{id:463, url:'/Regions/11/Tournaments/463/Argentina-Primera-B-Metropolitana', name:'Primera B Metropolitana'},{id:450, url:'/Regions/11/Tournaments/450/Argentina-Primera-B-Nacional-Qualification', name:'Primera B Nacional - Qualification'}]},\n{type:0, id:12, flg:'flg-am', name: 'Armenia', tournaments: [{id:256, url:'/Regions/12/Tournaments/256/Armenia-Cup', name:'Cup'},{id:156, url:'/Regions/12/Tournaments/156/Armenia-Premier-League', name:'Premier League'},{id:270, url:'/Regions/12/Tournaments/270/Armenia-Super-Cup', name:'Super Cup'}]},\n{type:1, id:249, flg:'flg-cas', name: 'Asia', tournaments: [{id:212, url:'/Regions/249/Tournaments/212/Asia-East-Asian-Championship', name:'East Asian Championship'},{id:241, url:'/Regions/249/Tournaments/241/Asia-Gulf-Cup', name:'Gulf Cup'},{id:287, url:'/Regions/249/Tournaments/287/Asia-AFC-Champions-League', name:'AFC Champions League'},{id:575, url:'/Regions/249/Tournaments/575/Asia-AFC-Cup', name:'AFC Cup'},{id:644, url:'/Regions/249/Tournaments/644/Asia-AFC-U23-Asian-Cup', name:'AFC U23 Asian Cup'},{id:490, url:'/Regions/249/Tournaments/490/Asia-AFF-Championship', name:'AFF Championship'},{id:576, url:'/Regions/249/Tournaments/576/Asia-AFC-President-s-Cup', name:'AFC President\\'s Cup'},{id:635, url:'/Regions/249/Tournaments/635/Asia-Premier-League-Asia-Trophy', name:'Premier League Asia Trophy'}]},\n{type:0, id:14, flg:'flg-au', name: 'Australia', tournaments: [{" <> ...]} 
+             ]} 
+          ]}, 
+         {:comment, " /79450181/whoscored.com/1x1 "}, 
+         {"div", 
+          [ 
+            {"id", "div-gpt-ad-1595519084885-0"}, 
+            {"style", "height:1px;"}, 
+            {"data-ocm-ad", ""} 
+          ], []}, 
+         {"div", [{"class", "banner-container"}, {"style", "padding:8px 0"}], 
+          [ 
+            {:comment, " /79450181/whoscored.com/billboard1 "}, 
+            {"div", [{"id", "billboard1"}, {"data-ocm-ad", ""}], []} 
+          ]}, 
+         {"div", [{"id", "layout-wrapper"}, {"class", "max-content"}], 
+          [ 
+            {"div", [{"class", "left-sticky-absolute"}], 
+             [ 
+               {:comment, " /79450181/whoscored.com/leftsticky "}, 
+               {"div", [{"id", "leftsticky"}], 
+                [ 
+                  {"script", [], 
+                   ["googletag.cmd.push(function() { googletag.display('leftsticky') })"]} 
+                ]} 
+             ]}, 
+            {"div", [{"class", "right-sticky-absolute"}], 
+             [ 
+               {:comment, " /79450181/whoscored.com/rightsticky "}, 
+               {"div", [{"id", "rightsticky"}], 
+                [ 
+                  {"script", [], 
+                   ["googletag.cmd.push(function() { googletag.display('rightsticky') })"]} 
+                ]} 
+             ]}, 
+            {"div", [{"class", "sticky-unit-wrapper"}], 
+             [ 
+               {"div", [{"class", "main-content-column"}], 
+                [ 
+                  {"div", [{"id", "content-header"}], 
+                   [ 
+                     {"div", [{"id", "breadcrumb-nav"}], 
+                      [ 
+                        {"span", [{"class", "iconize iconize-icon-left"}], 
+                         [{"span", [...], ...}, "England"]}, 
+                        {"span", [{"class", "separator"}], ["»"]}, 
+                        {"a", [{"href", ...}], 
+                         ["\n            Premier League - 2009/2010\n        "]}, 
+                        {"span", [{...}], [...]}, 
+                        {"select", [...], ...} 
+                      ]} 
+                   ]}, 
+                  {"style", [], 
+                   ["\n    .match-header {\n        min-height: 140px;\n    }\n\n    .teams-score-info, .icons-details-container {\n        overflow: auto;\n    }\n\n    .match-header .teams-score-info .team .team-link {\n        overflow: hidden;\n        /* white-space: nowrap; */\n        /* text-overflow: ellipsis; */\n        width: 100%;\n        display: inline-block;\n        text-align: center;\n    }\n\n    .match-header .teams-score-info .small-home-team.team .team-link, .match-header .icons-details-container .small-home-crest {\n        text-align: left;\n    }\n\n    .match-header .teams-score-info .small-away-team.team .team-link, .match-header .icons-details-container .small-away-crest {\n        text-align: right;\n    }\n\n    .match-header .icons-details-container .crest {\n        padding: 8px;\n    }\n"]}, 
+                  {"div", 
+                   [ 
+                     {"id", "match-header"}, 
+                     {"class", 
+                      "col12-lg-12 col12-m-12 col12-s-12 col12-xs-12 match-header"} 
+                   ], 
+                   [ 
+                     {"div", [], 
+                      [ 
+                        {"div", [{"class", ...}], [{...}, ...]}, 
+                        {"div", [{...}], [...]} 
+                      ]} 
+                   ]}, 
+                  {"div", [{"style", "clear: both;"}], []}, 
+                  {"script", [{"type", "text/javascript"}], 
+                   ["\n\n    require.config.params['matchheader'] = {\n        input: [32,167,'Manchester United','Manchester City','20/09/2009 13:30:00','20/09/2009 00:00:00',6,'FT','1 : 1','4 : 3',,,'4 : 3','England','England']\n,\n        matchId: 317835\n    };\n\n\n"]}, 
+                  {"div", [{"id", "sub-navigation"}, {"class", ""}], 
+                   [{"ul", [], [{"li", ...}, {...}, ...]}]}, 
+                  {"div", 
+                   [ 
+                     {"id", "sub-sub-navigation"}, 
+                     {"class", "with-single-level"} 
+                   ], [{"ul", [], [{...}, ...]}]}, 
+                  {"h2", [], ["Timeline"]}, 
+                  {"div", [{"id", "live-incidents"}, {"class", "grid"}], []} 
+                ]}, 
+               {"div", [{"class", "side-content-column"}], 
+                [ 
+                  {"div", [{"class", "sticky-unit-container"}], 
+                   [ 
+                     {"div", [{"class", "banner-container"}], 
+                      [ 
+                        {:comment, " /79450181/whoscored.com/sidebar1 "}, 
+                        {"div", [{"id", ...}, {...}, ...], []} 
+                      ]} 
+                   ]} 
+                ]} 
+             ]}, 
+            {"div", [{"style", "position: relative;"}], 
+             [ 
+               {"ul", 
+                [{"id", "live-match-options"}, {"class", "simple-tabs tabs"}], 
+                [ 
+                  {"li", [], 
+                   [ 
+                     {"a", [{"href", "#match-centre"}, {"class", "selected"}], 
+                      [{"span", [], ["Match Centre"]}]} 
+                   ]}, 
+                  {"li", [], 
+                   [ 
+                     {"a", [{"href", "#match-commentary"}], 
+                      [{"span", [], ["Match Commentary"]}]} 
+                   ]}, 
+                  {"li", [], 
+                   [{"a", [{"href", "#chalkboard"}], [{"span", [], [...]}]}]}, 
+                  {"li", [], 
+                   [{"a", [{"href", "#heatmaps"}], [{"span", [], ...}]}]}, 
+                  {"li", [], 
+                   [{"a", [{"href", "#livestream"}], [{"span", ...}]}]} 
+                ]} 
+             ]}, 
+            {"div", [{"id", "live-match"}, {"class", "panel-container"}], 
+             [ 
+               {"div", [{"id", "match-centre-header"}], []}, 
+               {"div", 
+                [ 
+                  {"id", "match-centre"}, 
+                  {"class", "panel is-active-panel"}, 
+                  {"data-comparision-mode", "team"}, 
+                  {"data-selected-stat", "ratings"} 
+                ], []}, 
+               {"div", 
+                [ 
+                  {"id", "match-commentary"}, 
+                  {"class", "panel"}, 
+                  {"data-page-name", "first-page"}, 
+                  {"data-page-number", "0"} 
+                ], []}, 
+               {"div", 
+                [{"id", "chalkboard"}, {"class", "panel player-filter-on"}], 
+                []}, 
+               {"div", [{"id", "heatmaps"}, {"class", "panel"}], []}, 
+               {"div", [{"id", "livestream"}, {"class", "panel"}], 
+                [ 
+                  {"script", [], 
+                   ["\n    window.googletag = window.googletag || { cmd: [] };\n    googletag.cmd.push(function () {\n        googletag.defineSlot('/79450181/whoscored.com/streamingpages', [2, 2], 'div-gpt-ad-1595866317559-0').addService(googletag.pubads());\n        googletag.pubads().enableSingleRequest();\n        googletag.enableServices();\n    });\n"]}, 
+                  {:comment, " /79450181/whoscored.com/streamingpages "}, 
+                  {"div", [{"id", "div-gpt-ad-1595866317559-0"}], 
+                   [{"script", ...}]}, 
+                  {"div", [{"id", ...}], []} 
+                ]}, 
+               {"div", [{"id", "match-update-info"}], 
+                [{"div", [{"id", "match-loading-view"}], []}]}, 
+               {"div", 
+                [ 
+                  {"class", "match-status-info"}, 
+                  {"data-for-match-status-code", "2"} 
+                ], ["match_status_clmn_post"]}, 
+               {"div", 
+                [ 
+                  {"class", "match-status-info"}, 
+                  {"data-for-match-status-code", "4"} 
+                ], ["Interrupted"]}, 
+               {"div", 
+                [ 
+                  {"class", "match-status-info"}, 
+                  {"data-for-match-status-code", "5"} 
+                ], ["Abandoned"]} 
+             ]}, 
+            {"div", [{"class", "incident-icon-legends"}], 
+             [ 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", [{"class", "incident-icon"}, {"data-mom", ""}], []}, 
+                  {"label", [], ["Man of the match"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-goalnormal", ""} 
+                   ], []}, 
+                  {"label", [], ["Goal"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-goalown", ""} 
+                   ], []}, 
+                  {"label", [], ["Own goal"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-assist", ""} 
+                   ], []}, 
+                  {"label", [], ["Assist"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-tacklelastman", ""} 
+                   ], []}, 
+                  {"label", [], ["Last man tackle"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-errorleadstogoal", ""} 
+                   ], []}, 
+                  {"label", [], ["Error lead to goal"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [ 
+                  {"span", 
+                   [ 
+                     {"class", "incident-icon"}, 
+                     {"data-event-satisfier-penaltyscored", ...} 
+                   ], []}, 
+                  {"label", [], ["Penalty scored"]} 
+                ]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [{"span", [{"class", ...}, {...}], []}, {"label", [], [...]}]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [{"span", [{...}, ...], []}, {"label", [], ...}]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [{"span", [...], ...}, {"label", ...}]}, 
+               {"div", [{"class", "incident-icon-legend"}], 
+                [{"span", ...}, {...}]}, 
+               {"div", [{"class", ...}], [{...}, ...]}, 
+               {"div", [{...}], [...]}, 
+               {"div", [...], ...}, 
+               {"div", ...}, 
+               {...}, 
+               ... 
+             ]}, 
+            {"div", [{"style", "text-align: right; padding: 4px;"}], 
+             [ 
+               {"a", 
+                [ 
+                  {"href", "/ContactUs"}, 
+                  {"style", "color: #a0a0a0; padding: 8px;"} 
+                ], ["Please contact us with any feedback\n        "]} 
+             ]}, 
+            {"div", 
+             [{"class", "col12-lg-12 col12-m-12 col12-s-12 col12-xs-12"}], 
+             [ 
+               {:comment, " /79450181/whoscored.com/infeed1 "}, 
+               {"div", 
+                [ 
+                  {"id", "infeed1"}, 
+                  {"data-ocm-ad", ""}, 
+                  {"style", 
+                   "min-height: 100px; margin-top: 10px; margin-bottom: 10px;"}, 
+                  {"class", "banner-container"} 
+                ], []} 
+             ]}, 
+            {"script", [], 
+             ["\n        require.config.params[\"args\"] = {\n            matchId:317835,\n            matchCentreData: {\"playerIdNameDictionary\":{\"21723\":\"Anderson\",\"2213\":\"Dimitar Berbatov\",\"18296\":\"Antonio Valencia\",\"6410\":\"Patrice Evra\",\"3841\":\"John O'Shea\",\"7884\":\"Tomasz Kuszczak\",\"19104\":\"Nani\",\"9685\":\"Nemanja Vidic\",\"11530\":\"Ben Foster\",\"3859\":\"Wayne Rooney\",\"7\":\"Michael Owen\",\"119\":\"Gary Neville\",\"928\":\"Rio Ferdinand\",\"2115\":\"Michael Carrick\",\"5835\":\"Darren Fletcher\",\"77\":\"Ryan Giggs\",\"22079\":\"Jonny Evans\",\"3203\":\"Park Ji-Sung\",\"14167\":\"Carlos Tevez\",\"14244\":\"Pablo Zabaleta\",\"130\":\"Sylvinho\",\"2910\":\"Martin Petrov\",\"1034\":\"Shay Given\",\"14169\":\"Stephen Ireland\",\"4608\":\"Nigel de Jong\",\"70286\":\"Vladimír Weiss\",\"6210\":\"Javier Garrido\",\"8137\":\"Joleon Lescott\",\"14168\":\"Micah Richards\",\"188\":\"Gareth Barry\",\"836\":\"Wayne Bridge\",\"2703\":\"Shaun Wright-Phillips\",\"2809\":\"Stuart Taylor\",\"1982\":\"Craig Bellamy\",\"3817\":\"Kolo Touré\",\"80988\":\"David Ball\"},\"periodMinuteLimits\":{\"1\":45,\"2\":90,\"3\":105,\"4\":120},\"timeStamp\":\"20/09/2009 15:30:55\",\"attendance\":75066,\"venueName\":\"Old Trafford\",\"referee\":{\"officialId\":86,\"firstName\":\"Martin\",\"lastName\":\"Atkinson\",\"hasParticipatedMatches\":false,\"name\":\"Martin Atkinson\"},\"weatherCode\":\"\",\"elapsed\":\"FT\",\"startTime\":\"2009-09-20T13:30:00\",\"startDate\":\"2009-09-20T00:00:00\",\"score\":\"4 : 3\",\"htScore\":\"1 : 1\",\"ftScore\":\"4 : 3\",\"etScore\":\"\",\"pkScore\":\"\",\"statusCode\":6,\"periodCode\":-1,\"home\":{\"teamId\":32,\"formations\":[{\"formationId\":2,\"formationName\":\"442\",\"period\":16,\"startMinuteExpanded\":0,\"endMinuteExpanded\":64,\"jerseyNumbers\":[12,22,3,8,5,15,13,24,10,9,11,2,7,16,17,23,25,29],\"formationSlots\":[1,2,3,4,5,6,7,8,9,10,11,0,0,0,0,0,0,0],\"playerIds\":[11530,3841,6410,21723,928,9685,3203,5835,3859,2213,77,119,7,2115,19104,22079,18296,7884],\"formationPositions\":[{\"vertical\":0.0,\"horizontal\":5.0},{\"vertical\":2.5,\"horizontal\":1.0},{\"vertical\":2.5,\"horizontal\":9.0},{\"vertical\":6.0,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":6.5},{\"vertical\":6.0,\"horizontal\":1.0},{\"vertical\":6.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":3.5},{\"vertical\":6.0,\"horizontal\":9.0}]},{\"formationId\":2,\"formationName\":\"442\",\"period\":16,\"startMinuteExpanded\":64,\"endMinuteExpanded\":80,\"jerseyNumbers\":[12,22,3,8,5,15,25,24,10,9,11,2,7,16,17,23,13,29],\"formationSlots\":[1,2,3,4,5,6,7,8,9,10,11,0,0,0,0,0,0,0],\"playerIds\":[11530,3841,6410,21723,928,9685,18296,5835,3859,2213,77,119,7,2115,19104,22079,3203,7884],\"formationPositions\":[{\"vertical\":0.0,\"horizontal\":5.0},{\"vertical\":2.5,\"horizontal\":1.0},{\"vertical\":2.5,\"horizontal\":9.0},{\"vertical\":6.0,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":6.5},{\"vertical\":6.0,\"horizontal\":1.0},{\"vertical\":6.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":3.5},{\"vertical\":6.0,\"horizontal\":9.0}],\"subOnPlayerId\":18296,\"subOffPlayerId\":3203},{\"formationId\":2,\"formationName\":\"442\",\"period\":16,\"startMinuteExpanded\":80,\"endMinuteExpanded\":95,\"jerseyNumbers\":[12,22,3,8,5,15,25,24,10,7,11,2,9,16,17,23,13,29],\"formationSlots\":[1,2,3,4,5,6,7,8,9,10,11,0,0,0,0,0,0,0],\"playerIds\":[11530,3841,6410,21723,928,9685,18296,5835,3859,7,77,119,2213,2115,19104,22079,3203,7884],\"formationPositions\":[{\"vertical\":0.0,\"horizontal\":5.0},{\"vertical\":2.5,\"horizontal\":1.0},{\"vertical\":2.5,\"horizontal\":9.0},{\"vertical\":6.0,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":3.5},{\"vertical\":2.5,\"horizontal\":6.5},{\"vertical\":6.0,\"horizontal\":1.0},{\"vertical\":6.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":6.5},{\"vertical\":9.0,\"horizontal\":3.5},{\"vertical\":6.0,\"horizontal\":9.0}],\"subOnPlayerId\":7,\"subOffPlayerId\":2213},{\"formationId\":2,\"formationName\":\"442\",\"period\":16,\"startMinuteExpanded\":95,\"endMinuteExpanded\":96,\"jerseyNumbers\":[12,22,3,16,5,15,25,24,10,7,11,2,9,8,17,23,13,29],\"formationSlots\":[1,2,3,4,5,6,7,8,9,10,11,0,0,0,0,0,0,0],\"playerIds\":[11530,3841,6410,2115,928,9685,18296,5835,3859,7,77,119,2213,21723,19104,22079,3203,7884],\"formationPositions\":[{\"vertical\":0.0,\"horizontal\":5.0},{\"vertical\":2.5,\"horizonta" <> ...]}, 
+            {"script", 
+             [ 
+               {"async", ""}, 
+               {"type", "text/javascript"}, 
+               {"data-main", 
+                "https://d2zywfiolv4f83.cloudfront.net/js/scripts/match-centre.js?v=1689686108"}, 
+               {"src", 
+                "https://d2zywfiolv4f83.cloudfront.net/js/vendor/require.2.3.6.min.js?v=1689686108"} 
+             ], [""]}, 
+            {"div", [{"class", "sticky-unit-wrapper"}], 
+             [ 
+               {"div", [{"class", "main-content-column"}], 
+                [ 
+                  {"div", 
+                   [{"class", "col12-lg-12 col12-m-12 col12-s-12 col12-xs-12"}], 
+                   [{"div", [...], ...}, {"script", ...}]}, 
+                  "\n\n            User comments for this page are not available at the moment.\n        " 
+                ]}, 
+               {"div", [{"class", "side-content-column"}], 
+                [ 
+                  {"div", [{"class", "sticky-unit-container"}], 
+                   [{:comment, ...}, {...}]} 
+                ]} 
+             ]} 
+          ]}, 
+         {"div", [{"style", "clear: both;"}], []}, 
+         {"div", [{"id", "footer-wrapper"}], 
+          [ 
+            {"div", [{"id", "footer"}], 
+             [ 
+               {"div", [{"id", "footer-links"}], 
+                [ 
+                  {"div", [{"id", "footer-map"}], 
+                   [ 
+                     {"ul", [], 
+                      [ 
+                        {"li", [], [{"a", [...], ...}]}, 
+                        {"li", [], [{"a", ...}]}, 
+                        {"li", [], [{...}]}, 
+                        {"li", [], [...]}, 
+                        {"li", [], ...}, 
+                        {"li", ...}, 
+                        {...}, 
+                        ... 
+                      ]} 
+                   ]}, 
+                  {"div", [{"id", "footer-social"}], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"class", "social-icon twitter"}, 
+                        {"href", "https://twitter.com/WhoScored"}, 
+                        {"rel", "publisher"} 
+                      ], []}, 
+                     {"a", 
+                      [ 
+                        {"class", "social-icon instagram"}, 
+                        {"href", "https://www.instagram.com/officialwhoscored/"}, 
+                        {"rel", "publisher"} 
+                      ], []}, 
+                     {"a", 
+                      [ 
+                        {"class", "social-icon youtube"}, 
+                        {"href", "https://www.youtube.com/whoscored"}, 
+                        {"rel", "publisher"} 
+                      ], []} 
+                   ]} 
+                ]}, 
+               {"div", [{"id", "footer-wslogo"}], 
+                [ 
+                  {"img", 
+                   [ 
+                     {"loading", "lazy"}, 
+                     {"class", "ws-logo"}, 
+                     {"src", 
+                      "https://d2zywfiolv4f83.cloudfront.net/img/ws_logo.svg"}, 
+                     {"alt", ""}, 
+                     {"width", "140"}, 
+                     {"height", "36"} 
+                   ], []} 
+                ]}, 
+               {"div", [{"id", "footer-apps"}], 
+                [ 
+                  {"div", 
+                   [{"class", "footer-app-icon footer-app-icon-appstore"}], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"href", 
+                         "https://geo.itunes.apple.com/us/app/whoscored-football-app/id940048063?mt=8"} 
+                      ], [{"img", [{"alt", ...}, {...}, ...], []}]} 
+                   ]}, 
+                  {"div", 
+                   [{"class", "footer-app-icon footer-app-icon-googleplay"}], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"href", 
+                         "https://play.google.com/store/apps/details?id=com.whoscored"} 
+                      ], [{"img", [{...}, ...], []}]} 
+                   ]} 
+                ]}, 
+               {"div", [], 
+                ["\n    Data sources - Opta Sports, eNetPulse & Getty Images. Copyright © 2023 WhoScored.com\n"]}, 
+               {"div", [{"style", "font-size: 1em;"}], 
+                [ 
+                  {"a", 
+                   [ 
+                     {"style", "margin: 5px 0; display: inline-block;"}, 
+                     {"href", "/SaferGambling"} 
+                   ], ["Safer Gambling "]}, 
+                  {"div", [{"id", "legal-logos"}], 
+                   [ 
+                     {"a", 
+                      [ 
+                        {"href", "https://www.gamstop.co.uk/"}, 
+                        {"target", ...}, 
+                        {...}, 
+                        ... 
+                      ], [{"img", ...}]}, 
+                     {"img", [{"title", ...}, {...}, ...], []}, 
+                     {"a", [{...}, ...], [...]}, 
+                     {"a", [...], ...}, 
+                     {"a", ...} 
+                   ]} 
+                ]} 
+             ]} 
+          ]}, 
+         {"iframe", [{"name", "__tcfapiLocator"}, {"style", "display: none;"}], 
+          []}, 
+         {"script", [{"type", "text/javascript"}, {"id", ""}], 
+          ["!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version=\"2.0\",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,\"script\",\"https://connect.facebook.net/en_US/fbevents.js\");fbq(\"init\",\"233809787710341\");fbq(\"track\",\"PageView\");"]}, 
+         {"noscript", [], 
+          ["<img height=\"1\" width=\"1\" style=\"display:none\" src=\"https://www.facebook.com/tr?id=233809787710341&amp;ev=PageView&amp;noscript=1\">"]}, 
+         {"script", [{"type", "text/javascript"}, {"id", ""}], 
+          ["var maxTries=10,noOfTries=0,intervalId=window.setInterval(addXPID,1E3);function addXPID(){if(noOfTries===maxTries)window.clearInterval(intervalId);else{if(\"undefined\"!==typeof xtremepush){var a=xtremepush(\"get\",\"device_info\");\"undefined\"!==typeof a&&(window.clearInterval(intervalId),\"undefined\"!==typeof dataLayer&&dataLayer.push({event:\"addXPID\",xp_id:a.id}))}noOfTries++}};"]} 
+       ]} 
+    ]} 
+ ]} 
+iex(3)> Floki.find(doc, "#live-incidents") 
+[{"div", [{"id", "live-incidents"}, {"class", "grid"}], []}] 
+iex(4)>  
