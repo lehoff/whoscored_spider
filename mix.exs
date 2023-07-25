@@ -5,7 +5,7 @@ defmodule WhoscoredSpider.MixProject do
     [
       app: :whoscored_spider,
       version: "0.1.0",
-      elixir: "~> 1.15",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
